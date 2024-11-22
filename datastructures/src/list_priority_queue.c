@@ -14,6 +14,10 @@ typedef struct MinQueue
 
 MinQueue *createQueue()
 {
+    struct MinQueue *q = malloc(sizeof(MinQueue));
+    if (q == NULL) return NULL;
+    q->front = NULL;
+    return q;
 }
 
 void enqueue(MinQueue *q, int value)
