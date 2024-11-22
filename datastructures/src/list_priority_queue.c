@@ -4,6 +4,7 @@
 typedef struct Node
 {
     int data;
+    int priority;
     struct Node *next;
 } Node;
 
@@ -21,7 +22,7 @@ MinQueue *createQueue()
     return q;
 }
 
-void enqueue(MinQueue *q, int value)
+void enqueue(MinQueue *q, int value, int priority)
 {
 }
 
