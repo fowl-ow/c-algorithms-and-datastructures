@@ -24,6 +24,31 @@ MinQueue *createQueue()
 
 void enqueue(MinQueue *q, int value, int priority)
 {
+    if (q == NULL)
+        return;
+    Node *n = malloc(sizeof(Node));
+    if (n == NULL)
+        return;
+    n->data = value;
+    n->priority = priority;
+    n->next = NULL;
+    // n->next = NULL;
+    if (q->front == NULL || q->front->priority <= priority)
+    {
+        n->next = q->front;
+        q->front = n;
+    }
+    else
+    {
+
+        Node *current = q->front;
+        while (current->next != NULL && current->next->priority <= priority)
+        {
+            current = current->next;
+        }
+        n->next = current->next;
+        current->next = n;
+    }
 }
 
 int dequeue(MinQueue *q)
