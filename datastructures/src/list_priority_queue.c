@@ -1,4 +1,4 @@
-#include "../include/list_queue.h"
+#include "../include/list_priority_queue.h"
 #include <stdlib.h>
 
 typedef struct Node
