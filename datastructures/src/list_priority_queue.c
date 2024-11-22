@@ -38,4 +38,18 @@ int peek(MinQueue *q)
 
 void destroyQueue(MinQueue *q)
 {
+    if (q == NULL)
+        return;
+    if (q->front != NULL)
+    {
+        Node *n = q->front;
+        while (n->next != NULL)
+        {
+            Node *d = n;
+            n = n->next;
+            free(d);
+        }
+        free(n);
+    }
+    free(q);
 }
