@@ -15,7 +15,8 @@ typedef struct MinQueue
 MinQueue *createQueue()
 {
     struct MinQueue *q = malloc(sizeof(MinQueue));
-    if (q == NULL) return NULL;
+    if (q == NULL)
+        return NULL;
     q->front = NULL;
     return q;
 }
@@ -30,6 +31,9 @@ int dequeue(MinQueue *q)
 
 int peek(MinQueue *q)
 {
+    if (q == NULL || q->front == NULL)
+        return -1;
+    return q->front->data;
 }
 
 void destroyQueue(MinQueue *q)
