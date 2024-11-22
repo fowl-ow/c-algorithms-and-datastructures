@@ -3,11 +3,10 @@
 
 typedef struct Queue Queue;
 
-Queue* createQueue();
-void enqueue(Queue* q, int value);
-int dequeue(Queue* q);
-int peek(Queue* q);
-void destroyQueue(Queue* q);
-
+Queue *createQueue();
+void enqueue(Queue *q, int value);
+int dequeue(Queue *q);
+int peek(Queue *q);
+void destroyQueue(Queue *q);
 
 #endif
