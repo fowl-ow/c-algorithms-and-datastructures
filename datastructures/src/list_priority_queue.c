@@ -53,6 +53,19 @@ void enqueue(MinQueue *q, int value, int priority)
 
 int dequeue(MinQueue *q)
 {
+    if (q == NULL || q->front == NULL)
+        return -1;
+    Node *n = q->front;
+    if (n->next == NULL) {
+        q->front = NULL;
+    } 
+    else 
+    {
+        q->front = n->next;
+    }
+    int data = n->data;
+    free(n);
+    return data;
 }
 
 int peek(MinQueue *q)
