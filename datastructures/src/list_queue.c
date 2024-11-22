@@ -1,5 +1,5 @@
 #include "../include/list_queue.h"
-#include <stdlib.h>  
+#include <stdlib.h>
 
 typedef struct Node
 {
@@ -16,7 +16,8 @@ struct Queue
 Queue *createQueue()
 {
     struct Queue *q = malloc(sizeof(struct Queue));
-    if (q == NULL) return NULL;
+    if (q == NULL)
+        return NULL;
     q->front = NULL;
     q->rear = NULL;
     return q;
@@ -24,7 +25,8 @@ Queue *createQueue()
 
 void enqueue(Queue *q, int value)
 {
-    if (q == NULL) return;
+    if (q == NULL)
+        return;
     Node *n = malloc(sizeof(Node));
     n->data = value;
     n->next = NULL;
@@ -42,7 +44,8 @@ void enqueue(Queue *q, int value)
 
 int dequeue(Queue *q)
 {
-    if (q == NULL || q->front == NULL) return -1;
+    if (q == NULL || q->front == NULL)
+        return -1;
 
     Node *n = q->front;
     if (n->next == NULL)
@@ -61,13 +64,15 @@ int dequeue(Queue *q)
 
 int peek(Queue *q)
 {
-    if (q == NULL || q->front == NULL) return -1;
+    if (q == NULL || q->front == NULL)
+        return -1;
     return q->front->data;
 }
 
 void destroyQueue(Queue *q)
 {
-    if (q == NULL) return;
+    if (q == NULL)
+        return;
     if (q->front != NULL)
     {
         Node *n = q->front;
