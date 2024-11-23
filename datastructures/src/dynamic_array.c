@@ -10,33 +10,44 @@ typedef struct DynamicArray
 
 DynamicArray *createArray(int capacity)
 {
-
+	DynamicArray *arr = malloc(sizeof(DynamicArray));
+	if (arr == NULL)
+		return NULL;
+	arr->data = malloc(sizeof(int) * capacity);
+	if (arr->data == NULL)
+	{
+		free(arr);
+		return NULL;
+	}
+	arr->size = 0;
+	arr->capacity = capacity;
+	return arr;
 }
 
-void add(DynamicArray *array, int value)
+void add(DynamicArray *arr, int value)
 {
 }
 
-int get(const DynamicArray *array, int index)
+int get(const DynamicArray *arr, int index)
 {
 }
 
-void set(DynamicArray *array, int index, int value)
+void set(DynamicArray *arr, int index, int value)
 {
 }
 
-int size(const DynamicArray *array)
+int size(const DynamicArray *arr)
 {
 }
 
-int capacity(const DynamicArray *array)
+int capacity(const DynamicArray *arr)
 {
 }
 
-void removeAt(DynamicArray *array, int index)
+void removeAt(DynamicArray *arr, int index)
 {
 }
 
-void destroyArray(DynamicArray *array)
+void destroyArray(DynamicArray *arr)
 {
 }
