@@ -72,6 +72,22 @@ int capacity(const DynamicArray *arr)
 
 void removeAt(DynamicArray *arr, int index)
 {
+	if (arr == NULL || index < 0 || index >= arr->size)
+		return;
+	if (arr->size - 1 <= arr->capacity / 4)
+	{
+		int new_capacity = arr->capacity / 2;
+		int *new_data = realloc(arr->data, sizeof(int) * new_capacity);
+		if (new_data == NULL)
+			return;
+		arr->data = new_data;
+		arr->capacity = new_capacity;
+	}
+	for (index; index < arr->size - 1; index++)
+	{
+		arr->data[index] = arr->data[index + 1];
+	}
+	arr->size--;
 }
 
 void destroyArray(DynamicArray *arr)
