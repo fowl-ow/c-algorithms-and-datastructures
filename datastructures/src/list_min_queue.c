@@ -32,15 +32,14 @@ void enqueue(MinQueue *q, int value, int priority)
     n->data = value;
     n->priority = priority;
     n->next = NULL;
-    // n->next = NULL;
-    if (q->front == NULL || q->front->priority <= priority)
+
+    if (q->front == NULL || q->front->priority > priority)
     {
         n->next = q->front;
         q->front = n;
     }
     else
     {
-
         Node *current = q->front;
         while (current->next != NULL && current->next->priority <= priority)
         {
