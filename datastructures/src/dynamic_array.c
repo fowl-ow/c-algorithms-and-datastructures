@@ -65,6 +65,9 @@ int size(const DynamicArray *arr)
 
 int capacity(const DynamicArray *arr)
 {
+	if (arr == NULL)
+		return -1;
+	return arr->capacity;
 }
 
 void removeAt(DynamicArray *arr, int index)
