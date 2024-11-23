@@ -26,10 +26,27 @@ DynamicArray *createArray(int capacity)
 
 void add(DynamicArray *arr, int value)
 {
+	if (arr == NULL)
+		return;
+	if (arr->size >= arr->capacity)
+	{
+		int new_capacity = arr->capacity * 2;
+		int *new_data = realloc(arr->data, sizeof(int) * new_capacity);
+		if (new_data == NULL)
+			return;
+		arr->data = new_data;
+		arr->capacity = new_capacity;
+	}
+	arr->data[arr->size++] = value;
 }
 
 int get(const DynamicArray *arr, int index)
 {
+	if (arr == NULL)
+		return -1;
+	if (arr->size == 0 || index >= arr->size)
+		return -1;
+	return arr->data[index];
 }
 
 void set(DynamicArray *arr, int index, int value)
