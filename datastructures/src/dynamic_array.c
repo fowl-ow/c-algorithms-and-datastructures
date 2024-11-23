@@ -92,4 +92,8 @@ void removeAt(DynamicArray *arr, int index)
 
 void destroyArray(DynamicArray *arr)
 {
+	if (arr == NULL)
+		return;
+	free(arr->data);
+	free(arr);
 }
