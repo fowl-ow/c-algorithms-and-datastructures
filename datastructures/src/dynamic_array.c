@@ -51,13 +51,16 @@ int get(const DynamicArray *arr, int index)
 
 void set(DynamicArray *arr, int index, int value)
 {
-	if (arr == NULL || index < 0 || index >= arr->size) 
+	if (arr == NULL || index < 0 || index >= arr->size)
 		return;
 	arr->data[index] = value;
 }
 
 int size(const DynamicArray *arr)
 {
+	if (arr == NULL)
+		return -1;
+	return arr->size;
 }
 
 int capacity(const DynamicArray *arr)
