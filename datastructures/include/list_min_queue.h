@@ -1,5 +1,5 @@
-#ifndef LIST_PRIORITY_QUEUE_H
-#define LIST_PRIORITY_QUEUE_H
+#ifndef LIST_MIN_QUEUE_H
+#define LIST_MIN_QUEUE_H
 
 typedef struct MinQueue MinQueue;
 
