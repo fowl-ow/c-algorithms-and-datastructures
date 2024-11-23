@@ -27,6 +27,7 @@ void enqueue(Queue *q, int value)
     if (q == NULL)
         return;
     Node *n = malloc(sizeof(Node));
+    if (n == NULL) return;
     n->data = value;
     n->next = NULL;
     if (q->front == NULL && q->rear == NULL)
