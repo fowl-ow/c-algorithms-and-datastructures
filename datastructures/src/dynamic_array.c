@@ -83,9 +83,10 @@ void removeAt(DynamicArray *arr, int index)
 		arr->data = new_data;
 		arr->capacity = new_capacity;
 	}
-	for (index; index < arr->size - 1; index++)
+	while (index < arr->size - 1)
 	{
 		arr->data[index] = arr->data[index + 1];
+		index++;
 	}
 	arr->size--;
 }
